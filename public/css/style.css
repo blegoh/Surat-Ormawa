@@ -1,0 +1,150 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+body{
+	margin: 0;
+	padding: 0;
+	color: #888;
+	background: #ededed url(../img/pattern.png)no-repeat;
+	font-family: 'Roboto', sans-serif;
+}
+
+/*TYPOGRAPHY*/
+h1, h3{
+	font-weight: 800;
+}
+h2, h4, h5, h6{
+	font-weight: normal;
+	line-height: 1.3em;
+}
+input {
+	padding: 10px;
+}
+.text-yellow{
+	color: #f1c40f;
+}
+
+.btn { margin: 10px 0px 10px 0px }
+.btn.icon { margin: 0px }
+/*BACKGROUND*/
+.bg-yellow{ background-color: #F7A541; color: #fff }
+.bg-green { background: #A2CCA5; color: #f1f2f2}
+.bg-pink { background: #F45D4C; color: #f5f5f5}
+
+#wrapper{
+	width: 90%;
+	margin: 0px auto;
+}
+.welcome{
+	height: 400px;
+	width: 80%;
+	top: 50%;
+	left: 50%;
+	margin-top: -200px;
+	margin-left: -40%;
+	position: absolute;
+}
+.welcome input{
+	width: 100%;
+	padding: 5px 5px 5px 10px;
+	border: 0;
+	font-size: 15px;
+	font-style: italic;
+	box-shadow: 2px 2px 6px rgba(0,0,0,.1);
+}
+.welcome input[type=submit]{
+	color: #fff;
+	letter-spacing: 2px;
+	font-weight: bold;
+	border: 2px solid transparent;
+	transition :0.3s all ease;
+}
+.welcome input[type=submit]:focus{
+	outline: none;
+}
+.welcome input[type=submit]:hover{
+	background-color: transparent;
+	border: 2px solid #f1c40f;
+	color: #f1c40f;
+	transition : 0.3s all ease;
+	-moz-transition : 0.3s all ease;
+	-webkit-transition : 0.3s all ease;
+}
+
+/*CUSTOM BOOTSTRAP*/
+#custom-bootstrap-menu.navbar-default .navbar-brand {
+    color: #f1c40f;
+    font-weight: 800;
+}
+#custom-bootstrap-menu.navbar-default {
+    font-size: 14px;
+    background-color: transparent;
+    border-bottom-width: 0px;
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
+	margin: 10px 0px 10px 10px;
+    color: #f1c40f;
+    font-weight: 700;
+    background-color: rgba(248, 248, 248, 0);
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus {
+    color: #888;
+    background-color: transparent;
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus {
+    color: #fff;
+    border-radius: 5px;
+    background-color: #f1c40f;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle {
+    border-color: #ddd;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
+    background-color: #ddd;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
+    background-color: #888;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #888;
+}
+
+.panel-heading {
+	font-size: 20px;
+	color: #414042;
+}
+
+.margin {
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+.form-group span {
+	font-size: 16px;
+}
+.form-group select {
+	width: 100%;
+	padding: 7px;
+}
+
+.nav-tabs > li {
+	width: 50%;
+}
+
+.tab-content {
+	padding: 20px;
+	border: #ddd 1px solid;
+	border-top: 0px;
+}
+
+
+#footer {
+	width: 100%;
+	text-align: left;
+	padding: 15px;
+	margin-top: 40px;
+	font-size: 12px;
+}

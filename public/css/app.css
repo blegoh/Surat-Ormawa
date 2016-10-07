@@ -1,0 +1,304 @@
+/* GLOBAL CSS ------------------------------------------*/
+
+body {
+	font-family: 'Roboto', 'Open Sans', sans-serif;
+	/*background: #eceff1;*/
+	font-size: 13px;
+}
+
+a, a:hover, a:visited {
+	color: #42a5f5;
+}
+
+.ui.container {
+	margin: 0px;
+	padding: 0px;
+}
+
+.ui.container.satu {
+	max-width: 1127px;
+}
+
+.ui.container.dua {
+	max-width: 900px;
+}
+
+.ui.container.tiga {
+	max-width: 700px;
+}
+
+.ui.container.empat {
+	max-width: 500px;
+}
+
+
+/* HOMEPAGE CSS ----------------------------------------*/
+
+/* HEADER */
+
+#header {
+	/*position: absolute;*/
+	width: 100%;
+	/*top: 0;*/
+	padding: 25px 0px;
+	/*z-index: 99;*/
+}
+
+#header .logo {
+	font-size: 25px;
+	color: #fff;
+	font-weight: 700;
+	line-height: 70px;
+}
+
+#header .nav > ul > li {
+	float: left;
+	margin-left: 40px;
+	position: relative;
+	display: inline-block;
+	line-height: 70px;
+}
+
+#header .nav > ul > li > a {
+	font-size: 12px;
+	font-weight: 600;
+	position: relative;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+#home #header .nav > ul > li > a.diff {
+	background: #fff;
+	color: #666;
+	padding: 10px 20px;
+	border-radius: 5px;
+}
+
+/* MAIN */
+
+#home #main {
+	width: 100%;
+	height: 100vh;
+	display: table;
+	background-image: url("../img/background.jpg");
+	background-size: cover;
+}
+
+#home #main section {
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+#home #main .main-text {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+	font-size: 30px;
+	margin-bottom: 25px;
+	color: #fff;
+}
+
+/* FOOTER */
+
+#home #footer {
+	position: absolute;
+	bottom: 0;
+	color: #fff;
+	width: 100%;
+	padding: 30px 0px;
+	font-size: 12px;
+}
+
+/* LOGIN CSS -------------------------------------------*/
+
+.material-form {
+	width: 100%;
+	max-width: 350px;
+	margin: 0 auto;
+	border-radius: 3px;
+	padding: 20px;
+	position: relative;
+	background: #fff;
+	color: #666;
+}
+
+.material-form .title-form {
+	font-family: "Raleway", sans-serif;
+	margin: 10px 0px 10px;
+	font-weight: 400;
+	font-size: 30px;
+	color: #666;
+}
+
+.material-form .form-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.material-form .form-group .label {
+    display: block;
+    text-align: left;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 500;
+}
+
+.material-form .form-group .form-input {
+	border-bottom: 1px solid #ddd;
+	position: relative;
+}
+
+.material-form .form-group .form-input i {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	line-height: 45px;
+	height: 45px;
+}
+
+.material-form .form-group .form-input input {
+	font-family: "Roboto", sans-serif;
+    font-size: 13px;
+    width: 100%;
+    color: #888;
+    background: #fff;
+    padding: 0px;
+    line-height: 45px;
+    height: 45px;
+	border: none;
+	padding-left: 35px;
+}
+
+.material-form .form-group .form-input.focus {
+    border-bottom: 1px solid #42a5f5;
+}
+
+.material-form .form-group .form-input.focus i {
+    color: #42a5f5;
+}
+
+.material-form button {
+	width: 100%;
+	margin-top: 5px;
+}
+
+.material-form p.forgot a{
+	font-size: 12px;
+	float: right;
+	font-weight: 500;
+}
+
+.material-form .error-message {
+	background: #ffebee;
+	border: 1px solid #ffcdd2;
+	padding: 5px 25px;
+	border-radius: 3px;
+	color: #e57373;
+	margin-bottom: 15px;
+	font-size: 12px;
+	text-align: left;
+}
+
+/* BUTTON */
+
+.btn {
+    background: #42a5f5;
+    min-width: 100px;
+    max-height: 40px;
+    font-weight: 500;
+    display: inline-block;
+    padding: 0px 15px;
+    border: none;
+    border-radius: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    line-height: 40px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.btn:hover, .btn:visited, .btn:focus {
+    color: #fff;
+    outline: none;
+    padding: 0px 15px;
+}
+
+.btn i {
+    font-size: 18px;
+    vertical-align: bottom;
+    line-height: inherit;
+    float: left;
+    margin-right: 10px;
+}
+
+.btn-raised {
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+    -webkit-transition: -webkit-box-shadow 0.15s ease-out;
+    -moz-transition: -moz-box-shadow 0.15s ease-out;
+    -o-transition: -o-box-shadow 0.15s ease-out;
+    transition: box-shadow 0.15s ease-out
+}
+
+.btn-raised:hover {
+    -webkit-box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.33);
+    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.33);
+    color: #fff
+}
+
+/* CARD */
+
+.card { position: relative; background-color: #fff; color: #313534; border-radius: 2px; -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33); box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33) }
+
+.card-body { padding: 15px; position: relative }
+
+/* TABLE */
+
+table { width: 100%; color: #777 }
+
+table th { vertical-align: middle; text-transform: uppercase; padding: 8px; text-align: left; line-height: 25px; border-bottom: 2px solid #ddd; color: #777; font-weight: 600 }
+
+table tbody tr:hover { background: #f5f5f5 }
+
+table tbody td { padding: 8px; border-top: 1px solid #ddd; vertical-align: top; line-height: 25px }
+
+table tbody td .material-icons { font-size: 18px; color: #777; margin-right: 5px }
+
+table tbody td .material-icons:hover { color: #42a5f5 }
+
+/* DASHBOARD CSS ---------------------------------------*/
+
+#dashboard #header {
+	background: #42a5f5;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.24);
+	padding: 0;
+}
+
+#dashboard #main {
+	margin-top: 80px;
+}
+
+#dashboard .title { 
+	font-size: 25px;
+	font-weight: 700; 
+	color: #888; 
+	position: relative;
+	padding-left: 45px;
+	line-height: 35px;
+	margin-bottom: 20px;
+}
+
+#dashboard .title i { 
+	font-size: 35px; 
+	position: absolute; 
+	left: 0px;
+}
+
+
