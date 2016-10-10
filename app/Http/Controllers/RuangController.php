@@ -15,12 +15,14 @@ class RuangController extends Controller
         $this->middleware('auth');
     }
     public function index() {
+        $this->authorize('create.ruang');
         $ruang = Ruang::all();
 
         return view('ruang.index', ['ruang'=>$ruang]);
     }
 
     public function create(Request $request) {
+        $this->authorize('create.ruang');
         $rule = array(
             'nama' => 'required',
         );
@@ -37,12 +39,14 @@ class RuangController extends Controller
     }
 
     public function updateview($id) {
+        $this->authorize('create.ruang');
         $ruang = Ruang::find($id);
 
         return view('ruang.edit', ['ruang'=>$ruang]);
     }
 
     public function update(Request $request, $id) {
+        $this->authorize('create.ruang');
         $rule = array(
             'nama' => 'required',
         );
@@ -57,6 +61,7 @@ class RuangController extends Controller
     }
 
     public function delete($id) {
+        $this->authorize('create.ruang');
         Ruang::find($id)->delete();
 
         return redirect('/ruang');

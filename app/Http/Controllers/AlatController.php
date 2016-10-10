@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Alat;
-use App\Alat_Ruang;
-use App\Ruang;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -19,14 +17,14 @@ class AlatController extends Controller
     }
     
     public function index() {
-//        $alat = Alat::all();
+        $this->authorize('create.alat');
         $alat = Alat::all();
-        $ruang = Ruang::all();
 
-        return view('alat.index', ['alat'=>$alat, 'ruang'=>$ruang]);
+        return view('alat.index', compact('alat'));
     }
 
     public function create(Request $request) {
+        $this->authorize('create.alat');
         $rule = array(
             'nama' => 'required',
             'jumlah' => 'required'
@@ -45,12 +43,14 @@ class AlatController extends Controller
     }
 
     public function updateview($id) {
-        $alat = Alat_Ruang::find($id);
+        $this->authorize('create.alat');
+        $alat = Alat::find($id);
 
         return view('alat.edit', ['alat'=>$alat]);
     }
 
     public function update(Request $request, $id) {
+        $this->authorize('create.alat');
         $rule = array(
             'nama'      => 'required',
             'jumlah'    => 'required|integer'
@@ -58,7 +58,7 @@ class AlatController extends Controller
 
         $this->validate($request, $rule);
 
-        Alat_Ruang::find($id)->update([
+        Alat::find($id)->update([
             'nama_alat' => $request->nama,
             'jumlah'    => $request->jumlah
         ]);
@@ -67,6 +67,7 @@ class AlatController extends Controller
     }
 
     public function delete($id) {
+        $this->authorize('create.alat');
         Alat::find($id)->delete();
 
         return redirect('/alat');

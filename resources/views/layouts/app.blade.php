@@ -38,25 +38,20 @@
             <div class="col-sm-5">
                 <div class="collapse navbar-collapse navbar-menubuilder">
                     <ul class="nav navbar-nav navbar-right">
-                        @if (Auth::guest())
-                            <li><a href="/">Beranda</a>
-                            </li>
-                            <li class="active"><a href="/login">Login</a>
-                            </li>
-                        @elseif(Auth::user()->can('access.admin'))
-                            <li><a href="/home">Beranda</a>
-                            </li>
-                            <li><a href="/user">Akun</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    Barang <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="/alat">Alat</a></li>
-                                    <li><a href="/ruang">Ruang</a></li>
-                                </ul>
-                            </li>
+                        <li><a href="/">Beranda</a></li>
+                        @if (Auth::check())
+                            @if (Auth::user()->can('create.peminjaman'))
+                                <li><a href="/peminjaman">Peminjaman</a></li>
+                            @endif
+                            @if (Auth::user()->can('create.alat'))
+                                <li><a href="/alat">Alat</a></li>
+                            @endif
+                            @if (Auth::user()->can('create.ruang'))
+                                <li><a href="/ruang">Ruang</a></li>
+                            @endif
+                            @if (Auth::user()->can('create.user'))
+                                <li><a href="/user">User</a></li>
+                            @endif
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{Auth::user()->name}} <span class="caret"></span>
@@ -67,22 +62,8 @@
                                     </li>
                                 </ul>
                             </li>
-
                         @else
-                            <li><a href="/home">Beranda</a>
-                            </li>
-                            <li>
-                                <a href="/peminjaman">Peminjaman</a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{Auth::user()->name}} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="/logout">Logout</a>
-                                    </li>
-                                </ul>
+                            <li class="active"><a href="/login">Login</a>
                             </li>
                         @endif
                     </ul>

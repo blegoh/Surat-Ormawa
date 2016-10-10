@@ -18,9 +18,12 @@
                                     @endforeach
                                 </div>
                             @endif
-
                             <div class="form-group">
-                                <label for="ruang">Nama</label>
+                                <label for="Username">Username</label>
+                                <input type="text" class="form-control" id="uname" name="uname" value="{{$user->uname}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="Nama">Nama</label>
                                 <input type="text" class="form-control" id="ruang" name="name" value="{{$user->name}}">
                             </div>
 

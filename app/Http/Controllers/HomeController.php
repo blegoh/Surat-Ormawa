@@ -17,7 +17,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -27,18 +27,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $peminjaman = Peminjaman::all();
-
-//        foreach($peminjaman as $item) {
-//            $pinjam  = Carbon::createFromDate($item->tanggal_pinjam);
-//            $kembali = $item->tanggal_kembali;
-//
-//            $tgl    = $pinjam->format('j F Y g:i');
-//
-//        }
-
-        $data['peminjaman'] = $peminjaman;
-//        $data['pinjam']     = $tgl;
-        return view('home', $data);
+        return view('welcome');
     }
 }

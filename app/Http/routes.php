@@ -11,12 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -29,6 +23,9 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => 'web'], function () {
+    Route::get('/', function () {
+        return view('welcome');
+    });
 
     Route::get('api/events','EventController@event');
     Route::get('/event/{id}','EventController@show');

@@ -32,6 +32,6 @@ class EventController extends Controller
     public function show($id)
     {
         $event = Peminjaman::find($id);
-        return $event->nama_kegiatan;
+        return view('event.index',compact('event'));
     }
 }

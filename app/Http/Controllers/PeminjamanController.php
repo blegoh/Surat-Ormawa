@@ -26,10 +26,9 @@ class PeminjamanController extends Controller
     {
         $this->middleware('auth');
     }
-//    Index
+
     public function index() {
-        $pinjam = null;
-        $month = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+        $this->authorize('create.peminjaman');
         $peminjaman = Peminjaman::where('user_id', Auth::user()->id)
             ->get();
         $ruang      = Ruang::all();
@@ -44,6 +43,7 @@ class PeminjamanController extends Controller
 
 //    Create View
     public function createview() {
+        $this->authorize('create.peminjaman');
         $peminjaman = Peminjaman::all();
         $ruang      = Ruang::all();
         $alat       = Alat::all();
@@ -56,7 +56,7 @@ class PeminjamanController extends Controller
 
 //    Create Post
     public function create(Request $request) {
-
+        $this->authorize('create.peminjaman');
         $rule = array(
             'nama_kegiatan'         =>  'required',
             'tanggal_pinjam'        =>  'required|date_format:Y-m-d H:i',
@@ -85,6 +85,7 @@ class PeminjamanController extends Controller
 
 //    Edit View
     public function editview($id) {
+        $this->authorize('create.peminjaman');
         $peminjaman     =   Peminjaman::find($id);
         $ruang          =   Ruang::all();
         $alat           =   Alat::all();
@@ -98,6 +99,7 @@ class PeminjamanController extends Controller
 
 //    Update Peminjaman
     public function update(Request $request, $id) {
+        $this->authorize('create.peminjaman');
         $rule = array(
             'nama_kegiatan'         =>  'required',
             'tanggal_pinjam'        =>  'required|date_format:Y-m-d H:i',
@@ -120,6 +122,7 @@ class PeminjamanController extends Controller
 
 //    Tambah Alat
     public function addalat(Request $request, $id) {
+        $this->authorize('create.peminjaman');
 
         $alat = Alat::find($request->alat_id);
 
@@ -152,6 +155,7 @@ class PeminjamanController extends Controller
 
 //    Tambah Ruang
     public function addruang(Request $request, $id) {
+        $this->authorize('create.peminjaman');
 //        $rule = array(
 //            'ruang_id'   =>  'required',
 //        );
@@ -185,6 +189,7 @@ class PeminjamanController extends Controller
     }
 
     public function delalat($peminjaman, $id) {
+        $this->authorize('create.peminjaman');
         Peminjaman_Alat::where(
             ['alat_id', $id],
             ['peminjaman_id', $peminjaman])->delete();
@@ -193,6 +198,7 @@ class PeminjamanController extends Controller
     }
 
     public function delruang($peminjamanid, $ruangid) {
+        $this->authorize('create.peminjaman');
         $peminjaman = Peminjaman::find($peminjamanid);
 
         $ruang = Ruang::find($ruangid);
@@ -203,6 +209,7 @@ class PeminjamanController extends Controller
 
     }
     public function del($id) {
+        $this->authorize('create.peminjaman');
         $peminjaman = Peminjaman::find($id);
         $peminjaman->delete();
         $peminjaman->ruang()->detach();

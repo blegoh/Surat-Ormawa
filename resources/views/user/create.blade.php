@@ -18,10 +18,13 @@
                                     @endforeach
                                 </div>
                             @endif
-
+                            <div class="form-group">
+                                <label for="ruang">Username</label>
+                                <input type="text" class="form-control" id="uname" name="uname" value="{{old('uname')}}">
+                            </div>
                             <div class="form-group">
                                 <label for="ruang">Nama</label>
-                                <input type="text" class="form-control" id="ruang" name="name" value="{{old('name')}}">
+                                <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
                             </div>
 
                             <div class="form-group">
