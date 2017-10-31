@@ -8,3 +8,7 @@ class Ormawa extends Model
 {
     //
 }
+function coba()
+{
+    
+}
